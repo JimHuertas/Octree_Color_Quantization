@@ -25,7 +25,7 @@ def main(bits):
         #print(i%16, "  ", i/16)
         paleta_pixels[i%bits, i/bits] = (int(color.red), int(color.green), int(color.blue))
 
-    paleta_img.save('scrim_palette.png')
+    paleta_img.save('resultados/paleta.png')
 
     #Creando una nueva imagen apartir de la paleta creada
     resultado_img = Image.new('RGB', (width, height))
@@ -35,7 +35,8 @@ def main(bits):
             index = octree.get_pos_paleta(Color(*pixels[i, j]))
             color = paleta[index]
             out_pixels[i, j] = (int(color.red), int(color.green), int(color.blue))
-    resultado_img.save('scrim_out.png')
+    resultado_img.save('resultados/img_out.png')
+
 
 
 main(4)
